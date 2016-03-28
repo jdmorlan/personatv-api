@@ -7,6 +7,8 @@ gem 'rails-api'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 
+gem 'reform'
+
 gem 'puma'
 
 group :development do

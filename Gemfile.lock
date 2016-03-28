@@ -40,6 +40,12 @@ GEM
     bcrypt (3.1.11)
     builder (3.2.2)
     concurrent-ruby (1.0.1)
+    declarative (0.0.5)
+      uber (>= 0.0.15)
+    disposable (0.2.5)
+      declarative (~> 0.0.4)
+      representable (>= 2.4.0, <= 3.1.0)
+      uber
     erubis (2.7.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -90,6 +96,13 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (11.1.2)
+    reform (2.1.0)
+      disposable (>= 0.2.2, < 0.3.0)
+      representable (>= 2.4.0, < 3.1.0)
+      uber (~> 0.0.11)
+    representable (3.0.0)
+      declarative (~> 0.0.5)
+      uber (~> 0.0.15)
     spring (1.6.4)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -102,6 +115,7 @@ GEM
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uber (0.0.15)
 
 PLATFORMS
   ruby
@@ -113,6 +127,7 @@ DEPENDENCIES
   puma
   rails (= 4.2.5.2)
   rails-api
+  reform
   spring
 
 BUNDLED WITH

@@ -1,8 +1,8 @@
 class JwtDecoder
-  def initialize(application, encode_location, decode_location)
+  def initialize(application, encode_token, decode_token)
     @application = application
-    @encode_location = encode_location
-    @decode_location = decode_location
+    @encode_token = encode_token
+    @decode_token = decode_token
   end
 
   def call(environment)
@@ -14,11 +14,15 @@ class JwtDecoder
   private
 
   def get_encoded_token
-    @environment[@encode_location]
+    @environment[@encode_token]
   end
 
   def set_decoded_token
-    @environment[@decode_location] = decode_token(get_encoded_token)
+    token = get_encoded_token
+
+    if token
+      @environment[@decode_token] = decode_token(get_encoded_token)
+    end
   end
 
   def get_hmac_secret
