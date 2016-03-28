@@ -1,6 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Decode JSON Web Tokens for authentication
+  config.middleware.use JwtDecoder, 'HTTP_AUTHORIZATION', 'auth.token'
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
